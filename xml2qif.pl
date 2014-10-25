@@ -39,7 +39,7 @@ push @$account_numbers, $_;		  #load array ref again
 
 foreach my $account_number (@$account_numbers) {
 #print "$account_number\n";
-my $qif = Finance::QIF->new( file => "+>>$account_number" );
+my $qif = Finance::QIF->new( file => "+>>${account_number}.qif" );
 	foreach $tran_ref 
 	( @{$config->{'Account'}->{"$account_number"}->{'Transaction'}} ) 
 	{ #Transaction (per account number) loop
