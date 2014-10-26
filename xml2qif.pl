@@ -1,8 +1,9 @@
 #!/usr/bin/perl
 
-# Takes multiple Kiwibank XML files and merges them them into
-# QIF files. The QIF files are divided into bank account numbers!
-# Good for for scraping bank records into GNUcash accountancy software
+# Takes multiple Kiwibank XML statement files and merges all the transactions. 
+# It then outputs QIF files which encompass all transactions,
+# but are are sorted by bank account number!
+# Great for for scraping bank records into GNUcash accountancy software
 # Author: Patrick O'Connor (patrick_kiwi@protonmail.ch)
 
 use XML::Simple qw(:strict);
