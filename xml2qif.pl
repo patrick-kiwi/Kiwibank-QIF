@@ -35,14 +35,13 @@ foreach my $account_number (keys %{$config->{'Account'}}) { #AccountNumberLoop
 	my $amount = $tran_ref->{'Lines'}->{'Line'}->[0]->{'Amount'};
 	my $date = $tran_ref->{'Date'};
 	$date =~ s/(\d+)\-(\d+)\-(\d+)/$3\/$2\/$1/;
-	my $payee = $tran_ref->{'Lines'}->{'Line'}->[0]->{'Description'};
-	my $memo = $tran_ref->{'Lines'}->{'Line'}->[1]->{'Description'};
+	my $memo1 = $tran_ref->{'Lines'}->{'Line'}->[0]->{'Description'};
+	my $memo2 = $tran_ref->{'Lines'}->{'Line'}->[1]->{'Description'};
 
 		my $record = { #load each transaction into a hash ref
     		header   	=> "Type:Bank", 
     		transaction   	=> "$amount",
-    		payee    	=> "$payee",
-    		memo     	=> "$memo",
+    		memo     	=> "${memo1}; ${memo2}",
     		date     	=> "$date",
   		};
 	
