@@ -1,4 +1,4 @@
-xmltoqif
+Kiwibank qif xml tools
 ========
 
 xml2qif.pl converts multiple Kiwibank xml files into QIF ledgers.  Each new QIF file contains a summary of all transactions in the input xml files.  Great for scraping historical records, althought I've found that kiwibank misses a transaction every now and then.
