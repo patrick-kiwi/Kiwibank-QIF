@@ -1,8 +1,3 @@
-Kiwibank qif xml tools
-========
+xml2qif.pl - Takes a bunch of xml records, and converts them to bank account specific qif ledgers.  Each new account_number.qif contains a summary of all transactions for that account number in the input xml files.  Great for scraping historical records, althought I've found that kiwibank misses a transaction every now and then.
 
-xml2qif.pl converts multiple Kiwibank xml files into QIF ledgers.  Each new QIF file contains a summary of all transactions in the input xml files.  Great for scraping historical records, althought I've found that kiwibank misses a transaction every now and then.
-
-mergeMort.pl source.qif mort_ledger.qif - Takes a kiwibank qif download and incorperates the mortgage ledger qif.  The output is a modified source.qif file wheere the mortgage payments have splits with interest and principal.  If you're inporting the file into GNUcash you can automatically allocate interest payments to increasing costs:mortgage and principal payments to decreasing mortgage liabilities.
-
-
+mergeSplits.pl file.qif mortgage.qif - Takes a kiwibank file.qif and incorporates the mortgage.qif  The output is a modified source.qif file where the mortgage payments have correct interest, and principal splits.  If you're importing the file into GNUcash you can automatically allocate interest to (increasing) costs, and principal to (decreasing) liabilities.
