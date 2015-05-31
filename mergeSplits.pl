@@ -6,8 +6,8 @@
 ## USAGE: mergeSplits.pl BANK_ACCOUNT.qif MORTGAGE_LEDGER.qif
 ## where BANK_ACCOUNT.qif is the KiwiBank qif download for where the mortgage payments came from
 ## and MORTGAGE_LEDGER is the KiwiBank mortgage ledger qif summary for the same time period
-## this script merges the two into a single qif file containing propper splits of
-## mortgage interest and principal.  
+## This script merges the two files into a single qif file containing correct splits of
+## interest and principal.  Note Transaction memo on line 22 is hard coded  
 
 use Finance::QIF;
 sub getInterest;
