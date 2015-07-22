@@ -50,9 +50,7 @@ $out->close();
 
 
 sub getInterest { #SearchMortgageLedger
-   		my $INmort = Finance::QIF->new( 
-		#file => "38-9015-0472706-00_08Oct.QIF", autodetect => 1 );
-		file => "$ARGV[1]", autodetect => 1 );				
+   		my $INmort = Finance::QIF->new( file => "$ARGV[1]", autodetect => 1 );				
 		while ( my $rec = $INmort->next() ) {		
 		if ($rec->{'date'} eq $mortTran->[0] and
 		$rec->{'memo'} =~ /INTEREST/ ) {
